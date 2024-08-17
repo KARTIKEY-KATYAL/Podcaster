@@ -12,22 +12,27 @@ const podcastschema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    dispirtion: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     title: {
       type: String,
       unique: true,
       required: true,
     },
     user: [
-        {
-      type: mongoose.Types.ObjectId,
-      ref: "user",
-        },
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "user",
+      },
     ],
     category: [
-        {
-      type: mongoose.Types.ObjectId,
-      ref: "category",
-        },
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "category",
+      },
     ],
   },
   { timestamps: true }

@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
-const userschema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
-    user: {
+    username: {
+      // Renamed from 'user' to 'username'
       type: String,
       unique: true,
       required: true,
@@ -14,16 +15,16 @@ const userschema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true
+      required: true,
     },
-    podcast:[
-        {
-        type : mongoose.Types.ObjectId,
-        ref : "podcasts"
-        },
+    podcast: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "podcasts",
+      },
     ],
   },
-  { timestamps : true }
+  { timestamps: true }
 );
 
-export const user = mongoose.model("user",userschema)
+export const User = mongoose.model("User", userSchema);
